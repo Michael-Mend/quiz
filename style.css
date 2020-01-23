@@ -1,9 +1,18 @@
+body {
+    background-image: url(images/bg.png);
+    color: white;
+}
 li {
     list-style-type: lower-alpha;
 }
 .body {
     display: block;
-    background: rgb(249, 250, 196);
+    background: rgb(88, 88, 81);
+    border-radius: 10px;
+    border-bottom: solid;
+    border-right: solid;
+    border-color: black;
+    padding: 20px;
 }
 .bodyHide {
     display: none;
