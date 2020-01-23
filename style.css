@@ -3,9 +3,13 @@ li {
 }
 .body {
     display: block;
+    background: rgb(249, 250, 196);
 }
 .bodyHide {
     display: none;
+}
+.container {
+    margin-top: 10%;
 }
 #goHide {
     display: none;
