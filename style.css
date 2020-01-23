@@ -1,0 +1,12 @@
+li {
+    list-style-type: lower-alpha;
+}
+.body {
+    display: block;
+}
+.bodyHide {
+    display: none;
+}
+#goHide {
+    display: none;
+}
