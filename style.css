@@ -20,6 +20,19 @@ li {
 .container {
     margin-top: 10%;
 }
+.lb {
+    display: block;
+}
+.lbHide {
+    display: none;
+}
+.table {
+    color: white;
+}
 #goHide {
     display: none;
+}
+#timer {
+    margin-left: 20px;
+    padding-right: 30px;
 }

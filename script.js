@@ -17,17 +17,29 @@ var ans4 = $('#ans4');
 var score = 0;
 var timer = 80;
 
+var leaderboard = $('.lbHide');
+
 
 $('#go').on('click', function() {
     appear.attr('class', 'col-sm-6 body');
     disappear.attr('class', 'bodyHide');
-    
+   
+    $('#timer').html('time: ' + timer);
+    $('#score').html('score: ' + score);
+
+    setInterval(function(){
+        timer -= 1;
+        $('#timer').html('time: ' + timer); 
+    }, 1000);
 });
 
 $('#next').on('click', function() {
     if ($('#c').is(':checked')) {
         score += 10;
-        $('#score').html(score);
+        $('#score').html('score: ' + score + ' Correct!');
+        setTimeout( function() {
+            $('#score').html('score: ' + score);
+        }, 500);
     }
     else {
         timer -= 5;
@@ -45,7 +57,10 @@ $('#next').on('click', function() {
     $('#next1').on('click', function() {
         if ($('#b').is(':checked')) {
             score += 10;
-            $('#score').html(score);
+            $('#score').html('score: ' + score + ' Correct!');
+            setTimeout( function() {
+                $('#score').html('score: ' + score);
+            }, 500);
         }
         else {
             timer -= 5;
@@ -63,7 +78,10 @@ $('#next').on('click', function() {
         $('#next2').on('click', function() {
             if ($('#d').is(':checked')) {
                 score += 10;
-                $('#score').html(score);
+                $('#score').html('score: ' + score + ' Correct!');
+                setTimeout( function() {
+                    $('#score').html('score: ' + score);
+                }, 500);
             }
             else {
                 timer -= 5;
@@ -81,25 +99,26 @@ $('#next').on('click', function() {
             $('#next3').on('click', function() {
                 if ($('#a').is(':checked')) {
                     score += 10;
-                    $('#score').html(score);
+                    $('#score').html('score: ' + score + ' Correct!');
+                    setTimeout( function() {
+                        $('#score').html('score: ' + score);
+                    }, 500);
                 }
                 else {
                     timer -= 5;
                 }
                 quesNum.html('Question 5');
                 ques.html('Where should the JavaScript file be referenced in the html?');
-            
-                ans1.html('<input type="radio" id="a" name="ans">inside the head tag');
-                ans2.html('<input type="radio" id="b" name="ans">anywhere in the body');
-                ans3.html('<input type="radio" id="c" name="ans">at the very bottom of the body');
-                ans4.html('<input type="radio" id="d" name="ans">at the very top of the body');
                 
                 $('#nextDiv').html('<button class="text-center rounded" id="next4">next</button>');
                 
                 $('#next4').on('click', function() {
                     if ($('#c').is(':checked')) {
                         score += 10;
-                        $('#score').html(score);
+                        $('#score').html('score: ' + score + ' Correct!');
+                        setTimeout( function() {
+                            $('#score').html('score: ' + score);
+                        }, 500);
                     }
                     else {
                         timer -= 5;
@@ -117,7 +136,10 @@ $('#next').on('click', function() {
                     $('#next5').on('click', function() {
                         if ($('#a').is(':checked')) {
                             score += 10;
-                            $('#score').html(score);
+                            $('#score').html('score: ' + score + ' Correct!');
+                            setTimeout( function() {
+                                $('#score').html('score: ' + score);
+                            }, 500);
                         }
                         else {
                             timer -= 5;
@@ -135,11 +157,17 @@ $('#next').on('click', function() {
                         $('#finish').on('click', function() {
                             if ($('#d').is(':checked')) {
                                 score += 10;
-                                $('#score').html(score);
+                                $('#score').html('score: ' + score + ' Correct!');
+                                setTimeout( function() {
+                                    $('#score').html('score: ' + score);
+                                }, 500);
                             }
                             else {
                                 timer -= 5;
                             }
+                            prompt('You scored ' + score + ' points! Enter your initials below.');
+                            $('.body').attr('class', 'bodyHide');
+                            leaderboard.attr('class', 'col-sm-6 lb');
                         });
                     });
                 });
