@@ -15,10 +15,10 @@ var ans3 = $('#ans3');
 var ans4 = $('#ans4');
 
 var score = 0;
-var timer = 10;
+var timer = 70;
 
 var leaderboard = $('.lbHide');
-var clickCount=0;
+var clickCount = 0;
 
 function scored() { 
     score += 10;
@@ -37,16 +37,16 @@ $('#go').on('click', function() {
 
     setInterval(function(){
         timer -= 1;
-        $('#timer').html('time: ' + timer); 
+        $('#timer').html('time: ' + timer);
+        if (timer <= 0) {
+            setTimeout( function() {
+                prompt('You scored ' + score + ' points! Enter your initials below.');
+                $('.body').attr('class', 'bodyHide');
+                leaderboard.attr('class', 'col-sm-6 lb');
+            }, 500);
+        };
     }, 1000);
 
-    if (timer == 0) {
-        setTimeout( function() {
-            prompt('You scored ' + score + ' points! Enter your initials below.');
-            $('.body').attr('class', 'bodyHide');
-            leaderboard.attr('class', 'col-sm-6 lb');
-        }, 500);
-    }
 });
 
 $('#next').on('click', function() {
@@ -148,20 +148,3 @@ $('#next').on('click', function() {
         }, 500);
     }
 });
-
-
-
-
-
-
-
-
-
-        
-
-    
-    
-    
-
-
-    
