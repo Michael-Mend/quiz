@@ -37,20 +37,20 @@ $('#go').on('click', function() {
 
     setInterval(function(){
         timer -= 1;
-        $('#timer').html('time: ' + timer); 
-    }, 1000);
-
-    if (timer == 0) {
-        setTimeout( function() {
-            prompt('You scored ' + score + ' points! Enter your initials below.');
-            $('.body').attr('class', 'bodyHide');
-            leaderboard.attr('class', 'col-sm-6 lb');
-        }, 500);
-    }
+        $('#timer').html('time: ' + timer);
+            if (timer == 0) {
+                setTimeout( function() {
+                    prompt('You scored ' + score + ' points! Enter your initials below.');
+                    $('.body').attr('class', 'bodyHide');
+                    leaderboard.attr('class', 'col-sm-6 lb');
+                }, 500);
+            };
+        }, 1000);
+    
 });
 
 $('#next').on('click', function() {
-    clickCount++; 
+    clickCount++;
     if (clickCount == 1) {
         if ($('#c').is(':checked')) {
             scored();
