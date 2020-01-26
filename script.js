@@ -15,10 +15,21 @@ var ans3 = $('#ans3');
 var ans4 = $('#ans4');
 
 var score = 0;
-var timer = 70;
+var timer = 10;
 
 var leaderboard = $('.lbHide');
 var clickCount = 0;
+
+
+var time = 
+    setInterval(function(){
+        timer -= 1;
+        $('#timer').html('time: ' + timer);
+        
+        if (timer <= 0) {
+            stop();
+        };
+    }, 1000);
 
 function scored() { 
     score += 10;
@@ -28,25 +39,29 @@ function scored() {
     }, 500);
 };
 
+function stop() {
+    clearInterval(time);
+
+    setTimeout( function() {
+        name = prompt('You scored ' + score + ' points! Enter your name below.');
+        $('.body').attr('class', 'bodyHide');
+        leaderboard.attr('class', 'col-sm-6 lb');
+
+        localStorage.setItem('name', name);
+        localStorage.setItem('score', score);
+        $('.table').append(
+            '<tr> <td>' + localStorage.getItem('name') + '</td>' +
+            '<td>' + localStorage.getItem('score') + '</td> </tr>'
+            );            
+    }, 500);
+}
+
 $('#go').on('click', function() {
     appear.attr('class', 'col-sm-6 body');
     disappear.attr('class', 'bodyHide');
    
     $('#timer').html('time: ' + timer);
     $('#score').html('score: ' + score);
-
-    setInterval(function(){
-        timer -= 1;
-        $('#timer').html('time: ' + timer);
-        if (timer <= 0) {
-            setTimeout( function() {
-                prompt('You scored ' + score + ' points! Enter your initials below.');
-                $('.body').attr('class', 'bodyHide');
-                leaderboard.attr('class', 'col-sm-6 lb');
-            }, 500);
-        };
-    }, 1000);
-
 });
 
 $('#next').on('click', function() {
@@ -141,10 +156,9 @@ $('#next').on('click', function() {
             scored();
         }
         
-        setTimeout( function() {
-            prompt('You scored ' + score + ' points! Enter your initials below.');
-            $('.body').attr('class', 'bodyHide');
-            leaderboard.attr('class', 'col-sm-6 lb');
-        }, 500);
+        stop();
     }
+});
+$('#restart').on('click', function() {
+    location.reload();
 });
