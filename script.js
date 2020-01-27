@@ -19,6 +19,7 @@ var timer = 75;
 
 var leaderboard = $('.lbHide');
 var clickCount = 0;
+var visits = localStorage.getItem('visits');
 
 var time = 
     setInterval(function(){
@@ -49,26 +50,26 @@ function stop() {
         localStorage.setItem('name', name);
         localStorage.setItem('score', score);
         
-        if (score > localStorage.getItem('score1')) {
+        if (localStorage.getItem('score') > localStorage.getItem('score1')) {
             localStorage.setItem('third', localStorage.getItem('second'));
             localStorage.setItem('score3', localStorage.getItem('score2'));
-
+            
             localStorage.setItem('second', localStorage.getItem('first'));
             localStorage.setItem('score2', localStorage.getItem('score1'));
-            
+
             localStorage.setItem('first', localStorage.getItem('name'));
-            localStorage.setItem('score1', score);
+            localStorage.setItem('score1', localStorage.getItem('score'));
         }
-        else if (score > localStorage.getItem('score2')) {
+        else if (localStorage.getItem('score') > localStorage.getItem('score2')) {
             localStorage.setItem('third', localStorage.getItem('second'));
             localStorage.setItem('score3', localStorage.getItem('score2'));
 
             localStorage.setItem('second', localStorage.getItem('name'));
-            localStorage.setItem('score2', score);
+            localStorage.setItem('score2', localStorage.getItem('score'));
         }
-        else if (score > localStorage.getItem('score3')) {
+        else if (localStorage.getItem('score') > localStorage.getItem('score3')) {
             localStorage.setItem('third', localStorage.getItem('name'));
-            localStorage.setItem('score3', score);
+            localStorage.setItem('score3', localStorage.getItem('score'));
         }
         
         $('.table').append(
@@ -82,12 +83,25 @@ function stop() {
     }, 500);
 };
 
+
 $('#go').on('click', function() {
     appear.attr('class', 'col-sm-6 body');
     disappear.attr('class', 'bodyHide');
    
     $('#timer').html('time: ' + timer);
     $('#score').html('score: ' + score);
+
+    localStorage.setItem('visits', localStorage.getItem('visits') - - 1);
+    if (localStorage.getItem('visits') == 1) {
+        localStorage.setItem('first', '');
+        localStorage.setItem('score1', 0);
+
+        localStorage.setItem('second', '');
+        localStorage.setItem('score2', 0);
+        
+        localStorage.setItem('third', '');
+        localStorage.setItem('score3', 0);
+    };
 });
 
 $('#next').on('click', function() {
