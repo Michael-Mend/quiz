@@ -15,11 +15,10 @@ var ans3 = $('#ans3');
 var ans4 = $('#ans4');
 
 var score = 0;
-var timer = 10;
+var timer = 75;
 
 var leaderboard = $('.lbHide');
 var clickCount = 0;
-
 
 var time = 
     setInterval(function(){
@@ -46,15 +45,42 @@ function stop() {
         name = prompt('You scored ' + score + ' points! Enter your name below.');
         $('.body').attr('class', 'bodyHide');
         leaderboard.attr('class', 'col-sm-6 lb');
-
+        
         localStorage.setItem('name', name);
         localStorage.setItem('score', score);
+        
+        if (score > localStorage.getItem('score1')) {
+            localStorage.setItem('third', localStorage.getItem('second'));
+            localStorage.setItem('score3', localStorage.getItem('score2'));
+
+            localStorage.setItem('second', localStorage.getItem('first'));
+            localStorage.setItem('score2', localStorage.getItem('score1'));
+            
+            localStorage.setItem('first', localStorage.getItem('name'));
+            localStorage.setItem('score1', score);
+        }
+        else if (score > localStorage.getItem('score2')) {
+            localStorage.setItem('third', localStorage.getItem('second'));
+            localStorage.setItem('score3', localStorage.getItem('score2'));
+
+            localStorage.setItem('second', localStorage.getItem('name'));
+            localStorage.setItem('score2', score);
+        }
+        else if (score > localStorage.getItem('score3')) {
+            localStorage.setItem('third', localStorage.getItem('name'));
+            localStorage.setItem('score3', score);
+        }
+        
         $('.table').append(
-            '<tr> <td>' + localStorage.getItem('name') + '</td>' +
-            '<td>' + localStorage.getItem('score') + '</td> </tr>'
+            '<tr> <td>' + localStorage.getItem('first') + '</td>' +
+            '<td>' + localStorage.getItem('score1') + '</td> </tr>' +
+            '<tr> <td>' + localStorage.getItem('second') + '</td>' +
+            '<td>' + localStorage.getItem('score2') + '</td> </tr>' +
+            '<tr> <td>' + localStorage.getItem('third') + '</td>' +
+            '<td>' + localStorage.getItem('score3') + '</td> </tr>'
             );            
     }, 500);
-}
+};
 
 $('#go').on('click', function() {
     appear.attr('class', 'col-sm-6 body');
@@ -155,7 +181,6 @@ $('#next').on('click', function() {
         if ($('#d').is(':checked')) {
             scored();
         }
-        
         stop();
     }
 });
