@@ -15,7 +15,7 @@ var ans3 = $('#ans3');
 var ans4 = $('#ans4');
 
 var score = 0;
-var timer = 15;
+var timer = 75;
 var time = '';
 
 var leaderboard = $('.lbHide');
@@ -86,7 +86,7 @@ $('#go').on('click', function() {
         }
     }, 1000);
 
-    appear.attr('class', 'col-sm-6 body');
+    appear.attr('class', 'col-sm-6 body q');
     disappear.attr('class', 'bodyHide');
    
     $('#timer').html('time: ' + timer);

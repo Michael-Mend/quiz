@@ -26,11 +26,18 @@ li {
 .lbHide {
     display: none;
 }
+.q {
+    height: 350px;
+}
 .table {
     color: white;
 }
 #goHide {
     display: none;
+}
+#nextDiv {
+    position: absolute;
+    bottom: 20px;
 }
 #timer {
     margin-left: 20px;
