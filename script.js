@@ -15,21 +15,12 @@ var ans3 = $('#ans3');
 var ans4 = $('#ans4');
 
 var score = 0;
-var timer = 75;
+var timer = 15;
+var time = '';
 
 var leaderboard = $('.lbHide');
 var clickCount = 0;
 var visits = localStorage.getItem('visits');
-
-var time = 
-    setInterval(function(){
-        timer -= 1;
-        $('#timer').html('time: ' + timer);
-        
-        if (timer <= 0) {
-            stop();
-        };
-    }, 1000);
 
 function scored() { 
     score += 10;
@@ -83,8 +74,18 @@ function stop() {
     }, 500);
 };
 
-
 $('#go').on('click', function() {
+    time = 
+    setInterval(function(){
+        if (timer <= 0) {
+            stop();
+        }
+        else {
+            timer -= 1;
+            $('#timer').html('time: ' + timer);    
+        }
+    }, 1000);
+
     appear.attr('class', 'col-sm-6 body');
     disappear.attr('class', 'bodyHide');
    
@@ -105,7 +106,7 @@ $('#go').on('click', function() {
 });
 
 $('#next').on('click', function() {
-    clickCount++; 
+    clickCount++;
     if (clickCount == 1) {
         if ($('#c').is(':checked')) {
             scored();
@@ -200,4 +201,24 @@ $('#next').on('click', function() {
 });
 $('#restart').on('click', function() {
     location.reload();
+});
+$('#clear').on('click', function() {
+    localStorage.setItem('first', '');
+    localStorage.setItem('score1', 0);
+
+    localStorage.setItem('second', '');
+    localStorage.setItem('score2', 0);
+    
+    localStorage.setItem('third', '');
+    localStorage.setItem('score3', 0);
+
+    $('.table').html(
+        '<tr><th>Name</th><th>Score</th></tr>' +
+        '<tr> <td>' + localStorage.getItem('first') + '</td>' +
+        '<td>' + localStorage.getItem('score1') + '</td> </tr>' +
+        '<tr> <td>' + localStorage.getItem('second') + '</td>' +
+        '<td>' + localStorage.getItem('score2') + '</td> </tr>' +
+        '<tr> <td>' + localStorage.getItem('third') + '</td>' +
+        '<td>' + localStorage.getItem('score3') + '</td> </tr>'
+    );  
 });
