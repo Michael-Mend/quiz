@@ -15,7 +15,7 @@ var ans3 = $('#ans3');
 var ans4 = $('#ans4');
 
 var score = 0;
-var timer = 7;
+var timer = 70;
 var time = '';
 
 var leaderboard = $('.lbHide');
