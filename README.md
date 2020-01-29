@@ -1,6 +1,6 @@
 # quiz
 
-# user experience
+## user experience
 
 This application is a coding quiz relying on JavaScript logic and the jQuery library. The quiz is 7 
 questions and you will recieve 10 seconds per question. The score variable will tick up by 10 for every 
@@ -14,13 +14,14 @@ start screen.
 
 ![user interface](/images/ui.jpg "Optional Title")
 
-# structure
+## structure
 
 My main goal was to keep the html to a minimum and let the JavaScript do the heavy lifting. The 
 application begins with the first initial click of the go button. Empty high scores are stored in local 
 storage, the timer begins and the question div appears.
 
-![user interface](/images/go.jpg "Optional Title")
+![go](https://user-images.githubusercontent.com/5816571573379550-74c4cd80-4290-11ea-87b2-c52649545b0e.JPG)
+
 
 This is a pretty straight forward application that utilizes click events to restructure the html between 
 questions and conditioal statements to effect the time and score variables. Highscores are stored in 
