@@ -12,7 +12,7 @@ desire to clear the leaderboard the clear score button will do just that. Finall
 the quiz, should the user want to try for a better score, the restart button will bring them back to the 
 start screen.
 
-![user interface](/images/ui.jpg "Optional Title")
+![user interface](/images/ui.jpg)
 
 ## structure
 
@@ -29,11 +29,11 @@ localstorage and your 3 top scores will be displayed in descending order. The lo
 a clickCount variable every time the next button is pushed. From there it determines if the answer was 
 correct or inncorrect, and issues the approriate response. 
 
-![user interface](/images/next.jpg "Optional Title")
+![user interface](/images/next.jpg)
 
 Once the final question is submited or the time runs out the stop() function is called. The stop function 
 prompts you to enter your name then runs through its logic to determine if and where you should be placed 
 on the board.
 
-![stop function](/images/stop.jpg "Optional Title")
+![stop](https://user-images.githubusercontent.com/58165715/73379761-db49eb80-4290-11ea-86cb-ad21f0c86e5b.JPG)
 
