@@ -12,7 +12,7 @@ desire to clear the leaderboard the clear score button will do just that. Finall
 the quiz, should the user want to try for a better score, the restart button will bring them back to the 
 start screen.
 
-![user interface](/images/ui.jpg)
+![user interface](https://user-images.githubusercontent.com/58165715/73380000-45fb2700-4291-11ea-8665-5b9ddbe7ab8a.JPG)
 
 ## structure
 
@@ -20,7 +20,7 @@ My main goal was to keep the html to a minimum and let the JavaScript do the hea
 application begins with the first initial click of the go button. Empty high scores are stored in local 
 storage, the timer begins and the question div appears.
 
-![go](https://user-images.githubusercontent.com/5816571573379550-74c4cd80-4290-11ea-87b2-c52649545b0e.JPG)
+![go](https://user-images.githubusercontent.com/58165715/73379550-74c4cd80-4290-11ea-87b2-c52649545b0e.JPG)
 
 
 This is a pretty straight forward application that utilizes click events to restructure the html between 
@@ -29,7 +29,7 @@ localstorage and your 3 top scores will be displayed in descending order. The lo
 a clickCount variable every time the next button is pushed. From there it determines if the answer was 
 correct or inncorrect, and issues the approriate response. 
 
-![user interface](/images/next.jpg)
+![next](https://user-images.githubusercontent.com/58165715/73379720-c5d4c180-4290-11ea-997f-f5a4627c6863.JPG)
 
 Once the final question is submited or the time runs out the stop() function is called. The stop function 
 prompts you to enter your name then runs through its logic to determine if and where you should be placed 
