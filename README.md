@@ -6,9 +6,9 @@ questions and you will recieve 10 seconds per question. The score variable will 
 correct answer, and the timer will lose 5 seconds should you answer incorrectly. Upon finishing the quiz,
 whether it be by running out of time or answering all 7 questions, the user will be prompted to enter 
 their name which, in the event that it is higher than at least one of the 3 scores displayed, the users 
-name input along side the score they recieved will appear in the highscore leaderboard. Should the user desire to clear the leaderboard the clear score button will do just that. Finally, once completed with the quiz should the user want to try for a better score the restart button will bring them back to the start screen.
+name input along side the score they recieved will appear in the highscore leaderboard. Should the user desire to clear the leaderboard the clear score button will do just that. Finally, once completed with the quiz, should the user want to try for a better score, the restart button will bring them back to the start screen.
 
 # structure
 My main goal was to keep the html to a minimum and let the JavaScript do the heavy lifting. This is a 
 pretty straight forward application that utilizes click events to restructure the html between questions 
-and conditioal statements to effect the time and score variables.
+and conditioal statements to effect the time and score variables. Highscores are stored in localstorage and your 3 top scores will be displayed in descending order. 

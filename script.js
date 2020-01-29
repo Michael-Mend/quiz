@@ -189,8 +189,8 @@ $('#next').on('click', function() {
     
         ans1.html('<input type="radio" id="a" name="ans">article');
         ans2.html('<input type="radio" id="b" name="ans">section');
-        ans3.html('<input type="radio" id="c" name="ans">header');
-        ans4.html('<input type="radio" id="d" name="ans">form');
+        ans3.html('<input type="radio" id="c" name="ans">form');
+        ans4.html('<input type="radio" id="d" name="ans">head');
     }
     else if (clickCount == 7) {
         if ($('#d').is(':checked')) {
