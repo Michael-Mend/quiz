@@ -1,6 +1,7 @@
 # quiz
 
 # user experience
+
 This application is a coding quiz relying on JavaScript logic and the jQuery library. The quiz is 7 
 questions and you will recieve 10 seconds per question. The score variable will tick up by 10 for every 
 correct answer, and the timer will lose 5 seconds should you answer incorrectly. Upon finishing the quiz,
@@ -14,15 +15,24 @@ start screen.
 ![user interface](/images/ui.jpg "Optional Title")
 
 # structure
-My main goal was to keep the html to a minimum and let the JavaScript do the heavy lifting. This is a 
-pretty straight forward application that utilizes click events to restructure the html between questions 
-and conditioal statements to effect the time and score variables. Highscores are stored in localstorage 
-and your 3 top scores will be displayed in descending order. The logic works by incrementing a clickCount 
-variable every time the next button is pushed. From there it determines if the answer was correct or 
-inncorrect, and issues the approriate response. Once the final question is submited or the time runs out
-the stop() function is called. 
+
+My main goal was to keep the html to a minimum and let the JavaScript do the heavy lifting. The 
+application begins with the first initial click of the go button. Empty high scores are stored in local 
+storage, the timer begins and the question div appears.
+
+![user interface](/images/go.jpg "Optional Title")
+
+This is a pretty straight forward application that utilizes click events to restructure the html between 
+questions and conditioal statements to effect the time and score variables. Highscores are stored in 
+localstorage and your 3 top scores will be displayed in descending order. The logic works by incrementing 
+a clickCount variable every time the next button is pushed. From there it determines if the answer was 
+correct or inncorrect, and issues the approriate response. 
+
+![user interface](/images/next.jpg "Optional Title")
+
+Once the final question is submited or the time runs out the stop() function is called. The stop function 
+prompts you to enter your name then runs through its logic to determine if and where you should be placed 
+on the board.
 
 ![stop function](/images/stop.jpg "Optional Title")
 
-The stop function prompts you to enter your name then runs through its logic to determine if and where you
-should be placed on the board.
