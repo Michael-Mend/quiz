@@ -10,6 +10,7 @@ name input along side the score they recieved will appear in the highscore leade
 desire to clear the leaderboard the clear score button will do just that. Finally, once completed with 
 the quiz, should the user want to try for a better score, the restart button will bring them back to the 
 start screen.
+![user interface](/images/ui.png "Optional Title")
 
 # structure
 My main goal was to keep the html to a minimum and let the JavaScript do the heavy lifting. This is a 
@@ -19,4 +20,4 @@ and your 3 top scores will be displayed in descending order. The logic works by 
 variable every time the next button is pushed. From there it determines if the answer was correct or 
 inncorrect, and issues the approriate response. Once the final question is submited or the time runs out
 the stop() function is called. 
-![Alt text](/images/stop.png "Optional Title")
+![stop function](/images/stop.jpg "Optional Title")
